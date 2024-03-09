@@ -4,6 +4,7 @@ def main():
         "teeth": {"cost": 0, "income": 1},
         "rusty scissors": {"cost": 5, "income": 5},
         "push lawnmower": {"cost": 25, "income": 50},
+        "battery-powered lawnmower": {"cost": 250, "income": 100},
     }
 
     # Initial money, current tool, and win amount
@@ -42,3 +43,6 @@ def main():
             for tool, info in tools.items():
                 if money >= info["cost"]:
                     print(f"{tool.capitalize()} - Cost: ${info['cost']} - Income: ${info['income']} per day")
+
+            # Get the tool player wants to buy
+            new_tool = input("\nEnter the tool you want to buy: ").lower()
