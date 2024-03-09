@@ -5,6 +5,7 @@ def main():
         "rusty scissors": {"cost": 5, "income": 5},
         "push lawnmower": {"cost": 25, "income": 50},
         "battery-powered lawnmower": {"cost": 250, "income": 100},
+        "team of starving students": {"cost": 500, "income": 250}
     }
 
     # Initial money, current tool, and win amount
@@ -20,10 +21,6 @@ def main():
         # Display current status
         print(f"\nYou currently have ${money}. Your current tool is: {current_tool}")
 
-        # Check if player has enough money and current tool to win
-        if money >= win_amount and current_tool == "team of starving students":
-            print("\nCongratulations! You've won the game!")
-            break
 
         # Display options
         print("\nOptions:")
@@ -51,3 +48,14 @@ def main():
                 money -= tools[new_tool]["cost"]
                 current_tool = new_tool
                 print(f"\nYou have bought a {current_tool}.")
+            else:
+                print("\nInvalid input or not enough money to buy this tool.")
+        elif choice == "3":
+            print("\nExiting game...")
+            break
+        else:
+            print("\nInvalid choice. Please choose a valid option.")
+
+
+if __name__ == "__main__":
+    main()
