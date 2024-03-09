@@ -21,6 +21,10 @@ def main():
         # Display current status
         print(f"\nYou currently have ${money}. Your current tool is: {current_tool}")
 
+        # Check if player has enough money and current tool to win
+        if money >= win_amount and current_tool == "team of starving students":
+            print("\nCongratulations! You've won the game!")
+            break
 
         # Display options
         print("\nOptions:")
