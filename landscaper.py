@@ -46,3 +46,8 @@ def main():
 
             # Get the tool player wants to buy
             new_tool = input("\nEnter the tool you want to buy: ").lower()
+            # Check if the tool is valid and player has enough money to buy it
+            if new_tool in tools and money >= tools[new_tool]["cost"]:
+                money -= tools[new_tool]["cost"]
+                current_tool = new_tool
+                print(f"\nYou have bought a {current_tool}.")
